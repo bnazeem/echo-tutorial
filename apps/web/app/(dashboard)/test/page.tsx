@@ -1,7 +1,7 @@
 import React from "react";
 
 const Page = () => {
-  return <div>Test page!</div>;
+  return <div>Only auth and org can see me!!</div>;
 };
 
 export default Page;
