@@ -1,7 +1,7 @@
 import React from "react";
 
 const Page = () => {
-  return <div>Only auth and org can see me!!</div>;
+  return <div>Vapi Plugin</div>;
 };
 
 export default Page;
