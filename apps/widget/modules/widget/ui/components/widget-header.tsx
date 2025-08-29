@@ -1,7 +1,7 @@
 import { cn } from "@workspace/ui/lib/utils";
 import React from "react";
 
-const WidgetHeader = ({
+export const WidgetHeader = ({
   children,
   className,
 }: {
@@ -20,4 +20,4 @@ const WidgetHeader = ({
   );
 };
 
-export default WidgetHeader;
+// export default WidgetHeader;
