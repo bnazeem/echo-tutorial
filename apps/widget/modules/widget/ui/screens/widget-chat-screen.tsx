@@ -88,6 +88,7 @@ export const WidgetChatScreen = () => {
       status: messages.status,
       loadMore: messages.loadMore,
       loadSize: 10,
+      // observerEnabled: false,
     });
 
   const form = useForm<z.infer<typeof formSchema>>({
