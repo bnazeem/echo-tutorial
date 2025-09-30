@@ -1,12 +1,11 @@
-import { paginationOptsValidator } from "convex/server";
-import { ConvexError, v } from "convex/values";
-import { components, internal } from "../_generated/api";
-import { action, mutation, query } from "../_generated/server";
-import { supportAgent } from "../system/ai/agents/supportAgent";
-import { threadId } from "worker_threads";
+import { openai } from "@ai-sdk/openai";
 import { saveMessage } from "@convex-dev/agent";
 import { generateText } from "ai";
-import { openai } from "@ai-sdk/openai";
+import { paginationOptsValidator } from "convex/server";
+import { ConvexError, v } from "convex/values";
+import { components } from "../_generated/api";
+import { action, mutation, query } from "../_generated/server";
+import { supportAgent } from "../system/ai/agents/supportAgent";
 
 export const enhanceResponse = action({
   args: {
@@ -94,6 +93,12 @@ export const create = mutation({
       throw new ConvexError({
         code: "BAD_REQUEST",
         message: "Conversation resolved",
+      });
+    }
+
+    if (conversation.status === "unresolved") {
+      await ctx.db.patch(args.conversationId, {
+        status: "escalated",
       });
     }
 
