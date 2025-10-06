@@ -3,14 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=12288 turbo build",
+    "dev": "cross-env NODE_OPTIONS=--max-old-space-size=12288 turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
+    "cross-env": "^10.1.0",
     "prettier": "^3.6.2",
     "turbo": "^2.5.5",
     "typescript": "5.7.3"

@@ -1,6 +1,5 @@
 "use client";
 
-import { useVapi } from "@/modules/widget/hooks/use-vapi";
 import { WidgetView } from "@/modules/widget/ui/views/widget-view";
 import { use } from "react";
 
