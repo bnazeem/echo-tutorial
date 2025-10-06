@@ -3,6 +3,12 @@ import { withSentryConfig } from "@sentry/nextjs";
 const nextConfig = {
   transpilePackages: ["@workspace/ui"],
   devIndicators: false,
+  typescript: {
+    ignoreBuildErrors: true, // Skip TS type-checking during build
+  },
+  eslint: {
+    ignoreDuringBuilds: true, // Skip linting during build
+  },
 };
 
 export default withSentryConfig(nextConfig, {

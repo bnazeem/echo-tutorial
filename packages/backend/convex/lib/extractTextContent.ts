@@ -52,7 +52,7 @@ export async function extractTextContent(
     return extractTextFileContent(ctx, storageId, bytes, mimeType);
   }
 
-  throw new Error(`unsupported MIME type: ${mimeType}`);
+  throw new Error(`Unsupported MIME type: ${mimeType}`);
 }
 
 async function extractTextFileContent(
